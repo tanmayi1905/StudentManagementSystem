@@ -2,6 +2,8 @@ package com.tanu.sms;
 
 import java.util.Scanner;
 
+
+
 public class Main {
 
     public static void main(String[] args) {
@@ -12,9 +14,9 @@ public class Main {
 
         while (true) {
 
-            System.out.println("\n==================================");
-            System.out.println("   STUDENT MANAGEMENT SYSTEM");
-            System.out.println("==================================");
+            System.out.println("\n====================================");
+            System.out.println("     STUDENT MANAGEMENT SYSTEM");
+            System.out.println("====================================");
             System.out.println("1. Add Student");
             System.out.println("2. View All Students");
             System.out.println("3. Search Student");
@@ -94,10 +96,11 @@ public class Main {
                 System.out.println("\nThank You!");
                 scanner.close();
                 System.exit(0);
+                break;
 
             default:
 
-                System.out.println("\nInvalid Choice!");
+                System.out.println("\nInvalid Choice.");
 
             }
 

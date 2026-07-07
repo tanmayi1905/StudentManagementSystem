@@ -10,7 +10,6 @@ public class Student {
 
     // Default Constructor
     public Student() {
-
     }
 
     // Parameterized Constructor
@@ -66,12 +65,10 @@ public class Student {
 
     @Override
     public String toString() {
-        return "\n------------------------------------" +
-               "\nStudent ID : " + id +
-               "\nName       : " + name +
-               "\nAge        : " + age +
-               "\nCourse     : " + course +
-               "\nMarks      : " + marks +
-               "\n------------------------------------";
+
+        return String.format(
+                "ID : %d%nName : %s%nAge : %d%nCourse : %s%nMarks : %.2f",
+                id, name, age, course, marks);
     }
+
 }

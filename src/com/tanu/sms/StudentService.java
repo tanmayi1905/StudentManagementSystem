@@ -1,12 +1,12 @@
 package com.tanu.sms;
-
+import java.util.List;
 import java.util.ArrayList;
 
 public class StudentService {
 
-    private ArrayList<Student> studentList = new ArrayList<>();
+    private final List<Student> studentList = new ArrayList<>();
 
-    // Check Duplicate Student ID
+    // Check duplicate Student ID
     private boolean isStudentIdExists(int id) {
 
         for (Student student : studentList) {
@@ -14,6 +14,7 @@ public class StudentService {
             if (student.getId() == id) {
                 return true;
             }
+
         }
 
         return false;
@@ -24,13 +25,13 @@ public class StudentService {
 
         if (isStudentIdExists(student.getId())) {
 
-            System.out.println("\n Student ID already exists!");
+            System.out.println("\nStudent ID already exists.");
             return;
         }
 
         studentList.add(student);
 
-        System.out.println("\n Student Added Successfully!");
+        System.out.println("\nStudent added successfully.");
     }
 
     // View All Students
@@ -38,15 +39,20 @@ public class StudentService {
 
         if (studentList.isEmpty()) {
 
-            System.out.println("\n No Student Records Found.");
+            System.out.println("\nNo student records found.");
             return;
         }
 
         System.out.println("\n========== STUDENT LIST ==========");
 
         for (Student student : studentList) {
+
+            System.out.println("----------------------------");
             System.out.println(student);
+
         }
+
+        System.out.println("----------------------------");
     }
 
     // Search Student
@@ -56,12 +62,16 @@ public class StudentService {
 
             if (student.getId() == id) {
 
+                System.out.println("\nStudent Found");
+                System.out.println("----------------------------");
                 System.out.println(student);
                 return;
+
             }
+
         }
 
-        System.out.println("\n Student Not Found.");
+        System.out.println("\nStudent not found.");
     }
 
     // Update Marks
@@ -73,12 +83,14 @@ public class StudentService {
 
                 student.setMarks(newMarks);
 
-                System.out.println("\n Marks Updated Successfully.");
+                System.out.println("\nMarks updated successfully.");
                 return;
+
             }
+
         }
 
-        System.out.println("\n Student Not Found.");
+        System.out.println("\nStudent not found.");
     }
 
     // Delete Student
@@ -92,18 +104,23 @@ public class StudentService {
 
                 studentToDelete = student;
                 break;
+
             }
+
         }
 
         if (studentToDelete != null) {
 
             studentList.remove(studentToDelete);
 
-            System.out.println("\n Student Deleted Successfully.");
+            System.out.println("\nStudent deleted successfully.");
+
         } else {
 
-            System.out.println("\n Student Not Found.");
+            System.out.println("\nStudent not found.");
+
         }
+
     }
 
 }
