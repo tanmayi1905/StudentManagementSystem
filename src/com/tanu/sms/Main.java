@@ -29,8 +29,31 @@ public class Main {
 
             case 1:
 
-                // We will write Add Student code here
+                System.out.print("Enter Student ID : ");
+                int id = sc.nextInt();
+
+                sc.nextLine(); // Consume newline
+
+                System.out.print("Enter Student Name : ");
+                String name = sc.nextLine();
+
+                System.out.print("Enter Student Age : ");
+                int age = sc.nextInt();
+
+                sc.nextLine(); // Consume newline
+
+                System.out.print("Enter Course : ");
+                String course = sc.nextLine();
+
+                System.out.print("Enter Marks : ");
+                double marks = sc.nextDouble();
+
+                Student student = new Student(id, name, age, course, marks);
+
+                service.addStudent(student);
+
                 break;
+              
 
             case 2:
 
