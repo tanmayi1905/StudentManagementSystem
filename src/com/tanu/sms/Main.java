@@ -61,18 +61,30 @@ public class Main {
                 break;
 
             case 3:
+            	  System.out.print("Enter Student ID to Search : ");
+            	    int searchId = sc.nextInt();
 
-                // Search code later
+            	    service.searchStudent(searchId);
+
+                
                 break;
 
             case 4:
 
-                // Update code later
+            	System.out.print("Enter Student ID : ");
+                int updateId = sc.nextInt();
+
+                System.out.print("Enter New Marks : ");
+                double newMarks = sc.nextDouble();
+
+                service.updateMarks(updateId, newMarks);
                 break;
 
             case 5:
+            	 System.out.print("Enter Student ID to Delete : ");
+            	    int deleteId = sc.nextInt();
 
-                // Delete code later
+            	    service.deleteStudent(deleteId);
                 break;
 
             case 6:
