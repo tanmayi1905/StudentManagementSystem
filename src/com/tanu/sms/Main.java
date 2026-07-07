@@ -6,14 +6,14 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        StudentService service = new StudentService();
+        StudentService studentService = new StudentService();
 
         while (true) {
 
             System.out.println("\n==================================");
-            System.out.println("  STUDENT MANAGEMENT SYSTEM");
+            System.out.println("   STUDENT MANAGEMENT SYSTEM");
             System.out.println("==================================");
             System.out.println("1. Add Student");
             System.out.println("2. View All Students");
@@ -23,79 +23,81 @@ public class Main {
             System.out.println("6. Exit");
             System.out.print("Enter Your Choice : ");
 
-            int choice = sc.nextInt();
+            int choice = scanner.nextInt();
 
             switch (choice) {
 
             case 1:
 
                 System.out.print("Enter Student ID : ");
-                int id = sc.nextInt();
+                int id = scanner.nextInt();
 
-                sc.nextLine(); // Consume newline
+                scanner.nextLine();
 
                 System.out.print("Enter Student Name : ");
-                String name = sc.nextLine();
+                String name = scanner.nextLine();
 
                 System.out.print("Enter Student Age : ");
-                int age = sc.nextInt();
+                int age = scanner.nextInt();
 
-                sc.nextLine(); // Consume newline
+                scanner.nextLine();
 
                 System.out.print("Enter Course : ");
-                String course = sc.nextLine();
+                String course = scanner.nextLine();
 
                 System.out.print("Enter Marks : ");
-                double marks = sc.nextDouble();
+                double marks = scanner.nextDouble();
 
                 Student student = new Student(id, name, age, course, marks);
 
-                service.addStudent(student);
+                studentService.addStudent(student);
 
                 break;
-              
 
             case 2:
 
-                service.viewAllStudents();
+                studentService.viewAllStudents();
                 break;
 
             case 3:
-            	  System.out.print("Enter Student ID to Search : ");
-            	    int searchId = sc.nextInt();
 
-            	    service.searchStudent(searchId);
+                System.out.print("Enter Student ID : ");
+                int searchId = scanner.nextInt();
 
-                
+                studentService.searchStudent(searchId);
+
                 break;
 
             case 4:
 
-            	System.out.print("Enter Student ID : ");
-                int updateId = sc.nextInt();
+                System.out.print("Enter Student ID : ");
+                int updateId = scanner.nextInt();
 
                 System.out.print("Enter New Marks : ");
-                double newMarks = sc.nextDouble();
+                double newMarks = scanner.nextDouble();
 
-                service.updateMarks(updateId, newMarks);
+                studentService.updateMarks(updateId, newMarks);
+
                 break;
 
             case 5:
-            	 System.out.print("Enter Student ID to Delete : ");
-            	    int deleteId = sc.nextInt();
 
-            	    service.deleteStudent(deleteId);
+                System.out.print("Enter Student ID : ");
+                int deleteId = scanner.nextInt();
+
+                studentService.deleteStudent(deleteId);
+
                 break;
 
             case 6:
 
-                System.out.println("Thank You!");
-                sc.close();
+                System.out.println("\nThank You!");
+                scanner.close();
                 System.exit(0);
 
             default:
 
-                System.out.println("Invalid Choice!");
+                System.out.println("\nInvalid Choice!");
 
             }
 
