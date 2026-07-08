@@ -32,6 +32,7 @@ public class Main {
             System.out.println("5. Update Marks");
             System.out.println("6. Display Topper");
             System.out.println("7. Delete Student");
+            System.out.println("8. Count Total Students");
             System.out.println("8. Exit");
 
             System.out.print("Enter Your Choice : ");

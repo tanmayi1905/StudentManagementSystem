@@ -136,9 +136,6 @@ public class StudentDAO {
     }
 
 
-
-
-
     // Search Student By ID
     public Student searchStudent(int id) {
 
@@ -290,5 +287,28 @@ public class StudentDAO {
 
 
     }
+    // Count Total Students
+ 
+    public int countStudents() {
+
+        int count = 0;
+
+        String sql = "SELECT COUNT(*) FROM students";
+
+        try (Connection con = DBConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql);
+             ResultSet rs = ps.executeQuery()) {
+
+            if (rs.next()) {
+                count = rs.getInt(1);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return count;
+    }
+
 
 }

@@ -60,8 +60,6 @@ public class StudentService {
     }
 
 
-
-
     // Search Student by id
     public void searchStudent(int id) {
 
@@ -143,6 +141,17 @@ public class StudentService {
 
 
     }
+    // Count Total Students
+    public void countStudents() {
+
+        int total = studentDAO.countStudents();
+
+        System.out.println("\n==========================");
+        System.out.println("Total Students : " + total);
+        System.out.println("==========================");
+    }
+
+
 
 
 }
