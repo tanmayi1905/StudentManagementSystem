@@ -1,6 +1,9 @@
-package com.tanu.sms;
+package com.tanu.sms.main;
 
 import java.util.Scanner;
+
+import com.tanu.sms.model.Student;
+import com.tanu.sms.service.StudentService;
 
 
 public class Main {
@@ -24,10 +27,12 @@ public class Main {
 
             System.out.println("1. Add Student");
             System.out.println("2. View All Students");
-            System.out.println("3. Search Student");
-            System.out.println("4. Update Marks");
-            System.out.println("5. Delete Student");
-            System.out.println("6. Exit");
+            System.out.println("3. Search Student by id");
+            System.out.println("4. Search Student by name");
+            System.out.println("5. Update Marks");
+            System.out.println("6. Display Topper");
+            System.out.println("7. Delete Student");
+            System.out.println("8. Exit");
 
             System.out.print("Enter Your Choice : ");
 
@@ -111,10 +116,22 @@ public class Main {
 
                 break;
 
-
-
-
             case 4:
+
+                scanner.nextLine();
+
+                System.out.print("Enter Student Name : ");
+                String studentName = scanner.nextLine();
+
+                studentService.searchStudentByName(studentName);
+
+                break;
+
+
+
+
+
+            case 5:
 
 
                 System.out.print("Enter Student ID : ");
@@ -132,20 +149,17 @@ public class Main {
 
                 break;
 
-            case 5:
+           
 
-                scanner.nextLine();
+            case 6:
 
-                System.out.print("Enter Student Name : ");
-                String studentName = scanner.nextLine();
+                
 
-                studentService.searchStudentByName(studentName);
+                studentService.displayTopper();
 
                 break;
 
-
-
-            case 6:
+            case 7:
 
 
                 System.out.print("Enter Student ID : ");
@@ -158,10 +172,9 @@ public class Main {
 
                 break;
 
+      
 
-
-
-            case 7:
+            case 8:
 
 
                 System.out.println("\nThank You!");

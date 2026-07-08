@@ -1,7 +1,10 @@
-package com.tanu.sms;
+package com.tanu.sms.service;
 
 
 import java.util.List;
+
+import com.tanu.sms.dao.StudentDAO;
+import com.tanu.sms.model.Student;
 
 
 public class StudentService {
@@ -106,8 +109,6 @@ public class StudentService {
     }
 
 
-
-
     // Update Marks
     public void updateMarks(int id, double newMarks) {
 
@@ -116,7 +117,21 @@ public class StudentService {
 
 
     }
+    // Display Topper
+    public void displayTopper() {
 
+        Student student = studentDAO.getTopper();
+
+        if (student != null) {
+
+            System.out.println("\n========== TOPPER ==========");
+            System.out.println(student);
+
+        } else {
+
+            System.out.println("\nNo student records found.");
+        }
+    }
 
 
 

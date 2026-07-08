@@ -1,4 +1,4 @@
-package com.tanu.sms;
+package com.tanu.sms.model;
 
 public class Student {
 

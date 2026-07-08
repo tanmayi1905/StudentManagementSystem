@@ -1,10 +1,13 @@
-package com.tanu.sms;
+package com.tanu.sms.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.tanu.sms.model.Student;
+import com.tanu.sms.util.DBConnection;
 
 
 public class StudentDAO {
@@ -220,6 +223,34 @@ public class StudentDAO {
         }
 
 
+    }
+ // Display Topper
+    public Student getTopper() {
+
+        Student student = null;
+
+        String sql = "SELECT * FROM students ORDER BY marks DESC LIMIT 1";
+
+        try (Connection con = DBConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql);
+             ResultSet rs = ps.executeQuery()) {
+
+            if (rs.next()) {
+
+                student = new Student();
+
+                student.setId(rs.getInt("id"));
+                student.setName(rs.getString("name"));
+                student.setAge(rs.getInt("age"));
+                student.setCourse(rs.getString("course"));
+                student.setMarks(rs.getDouble("marks"));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return student;
     }
  // Delete Student
     public void deleteStudent(int id) {
